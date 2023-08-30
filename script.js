@@ -25,6 +25,6 @@ function calculateGPA(){
 
   var totalGPA = ((classGPA1+classGPA2+classGPA3+classGPA4+classGPA5+classGPA6+classGPA7)/7)
   var totalUWGPA = ((classGPA1UW+classGPA2UW+classGPA3UW+classGPA4UW+classGPA5UW+classGPA6UW+classGPA7UW)/7)
-  document.getElementById("displayGPA").innerHTML=totalGPA;
-  document.getElementById("displayUWGPA").innerHTML=totalUWGPA;
+  document.getElementById("displayGPA").innerHTML="Weighted GPA: " + totalGPA;
+  document.getElementById("displayUWGPA").innerHTML="Unweighted GPA: " + totalUWGPA;
 }
