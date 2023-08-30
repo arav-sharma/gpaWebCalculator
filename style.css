@@ -54,18 +54,6 @@
     padding: 4px;
 
 }
-#displayGPA, #displayUWGPA{
-    width: 100px;
-    height: 50px;
-    border: 0px;
-    margin-top: 20px;
-    padding:0px 20px 0px 10px;
-    border-radius: 5px;
-    text-align: center;
-    background-color: #4682b4;
-    color: #ffff;
-    font-weight: 300;
-}
 body{
     background-image: url(back.jpg);
     background-size: cover;
