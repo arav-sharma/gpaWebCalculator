@@ -54,7 +54,7 @@
     padding: 4px;
 
 }
-#answer{
+#displayGPA, #displayUWGPA{
     width: 100px;
     height: 50px;
     border: 0px;
