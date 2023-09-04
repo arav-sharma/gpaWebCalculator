@@ -1,5 +1,6 @@
 <!DOCTYPE html>
   <html>
+    <!--Set tab title, tab icon, and imports style.css & script.js-->
     <title> Allen ISD GPA Calculator </title>  
     <link rel="shortcut icon" href="https://portal.allenisd.org:443/files/border.png"> 
       <head>
@@ -7,7 +8,9 @@
         <script type="text/javascript" src="script.js"></script>
       </head>
   <body>
+    <!--Creates website header (visible title)-->
     <h2>Allen ISD GPA Calculator</h2>
+        <!--Creates table for user to input grades-->
       <form>
           <table border="1" id="mainformat">
               <tr>
@@ -99,19 +102,21 @@
                 <td><input type="number" id="grade7" value="0" class="box"></td></select>
               </td>
               </tr>
-           
           </table>
-          
+
+        <!--Creates inputs for 9th Grade GPAs-->
           <h4>9th Grade Weighted GPA</h4>
           <input type="number" id="9thGPA" value="0" class="box">
           
           <h4>9th Grade Unweighted GPA</h4>
           <input type="number" id="9thUWGPA" value="0" class="box">
           
+        <!--Creates "Calculate GPA" button-->
           <br>
           <input type="button" class="btn" value="Calculate GPA" onclick="calculateGPA()">
           <br>
         
+        <!--Creates placeholders for GPA information when above is clicked, runs "calculateGPA()" in script.js-->
           <div id="header4"></div>
           
           <div id="displayGPA" class="result"></div>
