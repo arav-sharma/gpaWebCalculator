@@ -37,5 +37,31 @@ function calculateGPA(){
     
     document.getElementById("totalGPA").innerHTML="<b>- Total Cumulative GPA: </b>" + weightedTotal;
     document.getElementById("totalUWGPA").innerHTML="<b>- Total Unweighted GPA: </b>" + unweightedTotal;
+    // ------------------------------------------------------------------------------------------------------------ //
 
+    var top10 = 4.1250;
+    var qrt1 = 3.8892;
+    var qrt2 = 3.5428;
+    var qrt3 = 3.0250;
+    var qrt4 = 3.0200;
+
+    var displayqrt = document.getElementById("quartile")
+    
+    if (weightedTotal >= top10) {
+        displayqrt.innerHTML="<b>Quartile Rank: Top 10%</b>"
+    }
+    if (weightedTotal >= qrt1) and (weightedTotal < top10); {
+        displayqrt.innerHTML="<b>Quartile Rank: Quartile 1</b>"
+    }
+    if (weightedTotal >= qrt2) and (weightedTotal < qrt1); {
+        displayqrt.innerHTML="<b>Quartile Rank: Quartile 2</b>"
+    }
+    if (weightedTotal >= qrt3) and (weightedTotal < qrt2); {
+        displayqrt.innerHTML="<b>Quartile Rank: Quartile 3</b>"
+    }
+    if (weightedTotal >= qrt4) and (weightedTotal < qrt3); {
+        displayqrt.innerHTML="<b>Quartile Rank: Quartile 4</b>"
+    }
+
+    document.getElementById("disclaimer").innerHTML = "<i> *based on 2023 AISD Calculations for C/O 2026</i>";
 }
