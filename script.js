@@ -1,4 +1,4 @@
-document.title = "Allen ISD GPA Calculator"
+document.title = "Allen ISD GPA Calculator";
 
 function calculateGPA(){
   var classGrade1 = ((100-document.getElementById("grade1").value)*0.05);
