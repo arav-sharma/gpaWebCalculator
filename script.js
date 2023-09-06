@@ -28,8 +28,8 @@ function calculateGPA(){
     var classGPA7UW = parseInt((4 - classGrade7));
 
     // Calculates average weighted & unweighted GPAs
-    var totalGPA = parseInt(((classGPA1+classGPA2+classGPA3+classGPA4+classGPA5+classGPA6+classGPA7)/7));
-    var totalUWGPA = parseInt(((classGPA1UW+classGPA2UW+classGPA3UW+classGPA4UW+classGPA5UW+classGPA6UW+classGPA7UW)/7));
+    var totalGPA = parseFloat(((classGPA1+classGPA2+classGPA3+classGPA4+classGPA5+classGPA6+classGPA7)/7));
+    var totalUWGPA = parseFloat(((classGPA1UW+classGPA2UW+classGPA3UW+classGPA4UW+classGPA5UW+classGPA6UW+classGPA7UW)/7));
     
     // Displays calculated GPA to website
     document.getElementById("header4").innerHTML="<u>Calculated GPAs:</u>";
@@ -41,8 +41,8 @@ function calculateGPA(){
     var unweighted9 = document.getElementById("9thUWGPA").value;
 
     // Averages 9th Grade GPA + Inputted Grades (i.e. 10th Grade)
-    var weightedTotal = (parseInt(totalGPA) + parseInt(weighted9))*0.5;
-    var unweightedTotal = (parseInt(totalUWGPA) + parseInt(unweighted9))*0.5;
+    var weightedTotal = (parseFloat(totalGPA) + parseFloat(weighted9))*0.5;
+    var unweightedTotal = (parseFloat(totalUWGPA) + parseFloat(unweighted9))*0.5;
     
     // Displays calculated (total) GPA to website
     document.getElementById("totalGPA").innerHTML="<b>- Total Cumulative GPA: </b>" + weightedTotal;
