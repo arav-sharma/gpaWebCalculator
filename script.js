@@ -1,31 +1,31 @@
 function calculateGPA(){
     // Calculates the difference in class grades from the max achievable grade of 100
-    var classGrade1 = parseInt(((100-document.getElementById("grade1").value)*0.05));
-    var classGrade2 = parseInt(((100-document.getElementById("grade2").value)*0.05));
-    var classGrade3 = parseInt(((100-document.getElementById("grade3").value)*0.05));
-    var classGrade4 = parseInt(((100-document.getElementById("grade4").value)*0.05));
-    var classGrade5 = parseInt(((100-document.getElementById("grade5").value)*0.05));
-    var classGrade6 = parseInt(((100-document.getElementById("grade6").value)*0.05));
-    var classGrade7 = parseInt(((100-document.getElementById("grade7").value)*0.05));
+    var classGrade1 = parseFloat(((100-document.getElementById("grade1").value)*0.05));
+    var classGrade2 = parseFloat(((100-document.getElementById("grade2").value)*0.05));
+    var classGrade3 = parseFloat(((100-document.getElementById("grade3").value)*0.05));
+    var classGrade4 = parseFloat(((100-document.getElementById("grade4").value)*0.05));
+    var classGrade5 = parseFloat(((100-document.getElementById("grade5").value)*0.05));
+    var classGrade6 = parseFloat(((100-document.getElementById("grade6").value)*0.05));
+    var classGrade7 = parseFloat(((100-document.getElementById("grade7").value)*0.05));
 
     // Subtracts grade difference (above) from GPA difference from max achievable GPA 
     // (dependent on weight value: 5, 4.5, 4)
-    var classGPA1 = parseInt((document.getElementById("weight1").value - classGrade1));
-    var classGPA2 = parseInt((document.getElementById("weight2").value - classGrade2));
-    var classGPA3 = parseInt((document.getElementById("weight3").value - classGrade3));
-    var classGPA4 = parseInt((document.getElementById("weight4").value - classGrade4));
-    var classGPA5 = parseInt((document.getElementById("weight5").value - classGrade5));
-    var classGPA6 = parseInt((document.getElementById("weight6").value - classGrade6));
-    var classGPA7 = parseInt((document.getElementById("weight7").value - classGrade7));
+    var classGPA1 = parseFloat((document.getElementById("weight1").value - classGrade1));
+    var classGPA2 = parseFloat((document.getElementById("weight2").value - classGrade2));
+    var classGPA3 = parseFloat((document.getElementById("weight3").value - classGrade3));
+    var classGPA4 = parseFloat((document.getElementById("weight4").value - classGrade4));
+    var classGPA5 = parseFloat((document.getElementById("weight5").value - classGrade5));
+    var classGPA6 = parseFloat((document.getElementById("weight6").value - classGrade6));
+    var classGPA7 = parseFloat((document.getElementById("weight7").value - classGrade7));
 
     // Same as above but weight is set to 4 for unweighted
-    var classGPA1UW = parseInt((4 - classGrade1));
-    var classGPA2UW = parseInt((4 - classGrade2));
-    var classGPA3UW = parseInt((4 - classGrade3));
-    var classGPA4UW = parseInt((4 - classGrade4));
-    var classGPA5UW = parseInt((4 - classGrade5));
-    var classGPA6UW = parseInt((4 - classGrade6));
-    var classGPA7UW = parseInt((4 - classGrade7));
+    var classGPA1UW = parseFloat((4 - classGrade1));
+    var classGPA2UW = parseFloat((4 - classGrade2));
+    var classGPA3UW = parseFloat((4 - classGrade3));
+    var classGPA4UW = parseFloat((4 - classGrade4));
+    var classGPA5UW = parseFloat((4 - classGrade5));
+    var classGPA6UW = parseFloat((4 - classGrade6));
+    var classGPA7UW = parseFloat((4 - classGrade7));
 
     // Calculates average weighted & unweighted GPAs
     var totalGPA = parseFloat(((classGPA1+classGPA2+classGPA3+classGPA4+classGPA5+classGPA6+classGPA7)/7));
