@@ -58,33 +58,8 @@ document.querySelectorAll("#mainTable input, #mainTable select").forEach(input =
     input.addEventListener('change', saveTableData);
 });
 
-function saveTableData() {
-    const rows = document.querySelectorAll("#mainTable tr:not(:first-child)");
-    const tableData = Array.from(rows).map(row => {
-        const inputs = row.querySelectorAll("input, select");
-        return {
-            className: inputs[0].value,
-            weight: inputs[1].value,
-            grade: inputs[2].value
-        };
-    });
-
-    document.cookie = "tableData=" + JSON.stringify(tableData) + ";path=/;expires=" + new Date(new Date().getTime() + 31536000000).toUTCString();
-    console.log('Cooked save function ran')
-}
-
-function getCookie(name) {
-    let cookieArr = document.cookie.split(";");
-    for(let i = 0; i < cookieArr.length; i++) {
-        let cookiePair = cookieArr[i].split("=");
-        if(name == cookiePair[0].trim()) {
-            return decodeURIComponent(cookiePair[1]);
-        }
-    }
-}
-
 function addRowWithData(data) {
-    addRow(); // Your existing function to add a blank row
+    addRow(); // Adds a new blank row
     const table = document.getElementById("mainTable");
     const lastRow = table.rows[table.rows.length - 1];
     const inputs = lastRow.querySelectorAll("input, select");
@@ -94,7 +69,7 @@ function addRowWithData(data) {
 }
 
 function loadTableData() {
-    const savedData = getCookie('tableData');
+    const savedData = localStorage.getItem('tableData');
     if (savedData) {
         const tableData = JSON.parse(savedData);
         tableData.forEach(rowData => addRowWithData(rowData));
@@ -102,3 +77,4 @@ function loadTableData() {
 }
 
 document.addEventListener('DOMContentLoaded', loadTableData);
+
