@@ -70,6 +70,7 @@ function saveTableData() {
     });
 
     document.cookie = "tableData=" + JSON.stringify(tableData) + ";path=/;expires=" + new Date(new Date().getTime() + 31536000000).toUTCString();
+    console.log('Cooked save function ran')
 }
 
 function getCookie(name) {
@@ -80,7 +81,6 @@ function getCookie(name) {
             return decodeURIComponent(cookiePair[1]);
         }
     }
-    return null;
 }
 
 function loadTableData() {
