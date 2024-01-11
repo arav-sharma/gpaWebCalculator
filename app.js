@@ -69,8 +69,7 @@ function saveTableData() {
         };
     });
 
-    // Serialize and save as a cookie
-    document.cookie = "tableData=" + JSON.stringify(tableData) + ";path=/";
+    document.cookie = "tableData=" + JSON.stringify(tableData) + ";path=/;expires=" + new Date(new Date().getTime() + 31536000000).toUTCString();
 }
 
 function getCookie(name) {
