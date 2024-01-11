@@ -43,3 +43,36 @@ function removeRow() {
         }, 500);
     }
 }
+
+function saveTableDataToURL() {
+    const rows = document.querySelectorAll("#mainTable tr:not(:first-child)");
+    const tableData = Array.from(rows).map(row => {
+        const inputs = row.querySelectorAll("input, select");
+        return {
+            className: inputs[0].value,
+            weight: inputs[1].value,
+            grade: inputs[2].value
+        };
+    });
+
+    const encodedData = encodeURIComponent(JSON.stringify(tableData));
+    window.location.hash = encodedData;
+}
+
+document.querySelectorAll("#mainTable input, #mainTable select").forEach(input => {
+    input.addEventListener('change', saveTableDataToURL);
+});
+
+function loadTableDataFromURL() {
+    const hashData = window.location.hash;
+    if (hashData) {
+        try {
+            const tableData = JSON.parse(decodeURIComponent(hashData.slice(1)));
+            tableData.forEach(rowData => addRowWithData(rowData));
+        } catch (e) {
+            console.error("Error parsing table data from URL:", e);
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', loadTableDataFromURL);
