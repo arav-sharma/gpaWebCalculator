@@ -58,31 +58,38 @@ document.querySelectorAll("#mainTable input, #mainTable select").forEach(input =
     input.addEventListener('change', saveTableData);
 });
 
+function saveTableData() {
+    const rows = document.querySelectorAll("#mainTable tr:not(:first-child)");
+    const tableData = Array.from(rows).map(row => {
+        const inputs = row.querySelectorAll("input, select");
+        return {
+            className: inputs[0].value,
+            weight: inputs[1].value,
+            grade: inputs[2].value
+        };
+    });
+
+    // Serialize and save as a cookie
+    document.cookie = "tableData=" + JSON.stringify(tableData) + ";path=/";
+}
+
+function getCookie(name) {
+    let cookieArr = document.cookie.split(";");
+    for(let i = 0; i < cookieArr.length; i++) {
+        let cookiePair = cookieArr[i].split("=");
+        if(name == cookiePair[0].trim()) {
+            return decodeURIComponent(cookiePair[1]);
+        }
+    }
+    return null;
+}
 
 function loadTableData() {
-    console.log("Loading table data...");
-    const savedData = localStorage.getItem('tableData');
+    const savedData = getCookie('tableData');
     if (savedData) {
-        console.log("Saved data found", savedData);
         const tableData = JSON.parse(savedData);
         tableData.forEach(rowData => addRowWithData(rowData));
-    } else {
-        console.log("No saved data found");
     }
 }
 
-document.addEventListener('DOMContentLoaded', loadTableData);
-
-
-function addRowWithData(data) {
-    addRow(); // Your existing function to add a blank row
-    const table = document.getElementById("mainTable");
-    const lastRow = table.rows[table.rows.length - 1];
-    const inputs = lastRow.querySelectorAll("input, select");
-    inputs[0].value = data.className;
-    inputs[1].value = data.weight;
-    inputs[2].value = data.grade;
-}
-
-// Call loadTableData on page load
 document.addEventListener('DOMContentLoaded', loadTableData);
