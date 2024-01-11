@@ -44,41 +44,32 @@ function removeRow() {
     }
 }
 
-function saveTableData() {
-    const rows = document.querySelectorAll("#mainTable tr:not(:first-child)");
-    const tableData = Array.from(rows).map(row => {
-        const inputs = row.querySelectorAll("input, select");
-        return {
-            className: inputs[0].value,
-            weight: inputs[1].value,
-            grade: inputs[2].value
-        };
-    });
-
-    localStorage.setItem('tableData', JSON.stringify(tableData));
-}
-
-document.querySelectorAll("#mainTable input, #mainTable select").forEach(input => {
-    input.addEventListener('change', saveTableData);
-});
-
-function addRowWithData(data) {
-    addRow(); // Adds a new blank row
-    const table = document.getElementById("mainTable");
-    const lastRow = table.rows[table.rows.length - 1];
-    const inputs = lastRow.querySelectorAll("input, select");
-    inputs[0].value = data.className;
-    inputs[1].value = data.weight;
-    inputs[2].value = data.grade;
-}
-
-function loadTableData() {
-    const savedData = localStorage.getItem('tableData');
-    if (savedData) {
-        const tableData = JSON.parse(savedData);
-        tableData.forEach(rowData => addRowWithData(rowData));
+function loadTableDataFromURL() {
+    const hashData = window.location.hash;
+    if (hashData) {
+        try {
+            const tableData = JSON.parse(decodeURIComponent(hashData.slice(1)));
+            tableData.forEach(rowData => addRowWithData(rowData));
+        } catch (e) {
+            console.error("Error parsing table data from URL:", e);
+        }
     }
 }
 
-document.addEventListener('DOMContentLoaded', loadTableData);
+// Call this function when the page loads
+document.addEventListener('DOMContentLoaded', loadTableDataFromURL);
 
+function loadTableDataFromURL() {
+    const hashData = window.location.hash;
+    if (hashData) {
+        try {
+            const tableData = JSON.parse(decodeURIComponent(hashData.slice(1)));
+            tableData.forEach(rowData => addRowWithData(rowData));
+        } catch (e) {
+            console.error("Error parsing table data from URL:", e);
+        }
+    }
+}
+
+// Call this function when the page loads
+document.addEventListener('DOMContentLoaded', loadTableDataFromURL);
