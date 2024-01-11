@@ -83,6 +83,16 @@ function getCookie(name) {
     }
 }
 
+function addRowWithData(data) {
+    addRow(); // Your existing function to add a blank row
+    const table = document.getElementById("mainTable");
+    const lastRow = table.rows[table.rows.length - 1];
+    const inputs = lastRow.querySelectorAll("input, select");
+    inputs[0].value = data.className;
+    inputs[1].value = data.weight;
+    inputs[2].value = data.grade;
+}
+
 function loadTableData() {
     const savedData = getCookie('tableData');
     if (savedData) {
