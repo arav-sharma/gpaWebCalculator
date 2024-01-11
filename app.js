@@ -1,3 +1,7 @@
+if (location.protocol !== 'https:') {
+    location.href = 'https://' + location.hostname + location.pathname;
+}
+
 function addRow() {
     const table = document.getElementById("mainTable");
     let rowCount = table.rows.length;
