@@ -60,12 +60,19 @@ document.querySelectorAll("#mainTable input, #mainTable select").forEach(input =
 
 
 function loadTableData() {
+    console.log("Loading table data...");
     const savedData = localStorage.getItem('tableData');
     if (savedData) {
+        console.log("Saved data found", savedData);
         const tableData = JSON.parse(savedData);
         tableData.forEach(rowData => addRowWithData(rowData));
+    } else {
+        console.log("No saved data found");
     }
 }
+
+document.addEventListener('DOMContentLoaded', loadTableData);
+
 
 function addRowWithData(data) {
     addRow(); // Your existing function to add a blank row
