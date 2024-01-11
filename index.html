@@ -1,1 +1,108 @@
-<h1>coming soon</h1>
+<!DOCTYPE html>
+  <html>
+    <title> Allen ISD GPA Calculator </title>  
+    <link rel="shortcut icon" href="https://portal.allenisd.org:443/files/border.png"> 
+      <head>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="script.js"></script>
+      </head>
+  <body>
+    <h2 id="title">Allen ISD GPA Calculator</h2>
+      <form>
+          <table border="1" id="mainTable">
+              <tr>
+                  <th>Enter Class Names:</th>
+                  <th>Class Type:</th>
+                  <th>Grade:</th>
+              </tr>
+              <!------------------------------subject 1----------------------------->
+              <tr>  
+                <td><input type="string" id="className" value="Class Name" class="box"></td></select>
+                <td><select id="weight1" class="selectBox">
+                  <option value="5">AP/IB</option>
+                  <option value="4.5">Dual Credit</option>
+                  <option value="4.5">Advanced</option>
+                  <option value="4">On Level</option>
+                </select></td>
+                <td><input type="number" id="grade1" value="0" class="box" min="0" max="100"></td></select>
+              </td>
+              </tr>
+              <!----------------------------------subject2------------------------------------->
+              <tr>  
+                <td><input type="string" id="className" value="Class Name" class="box"></td></select>
+                <td><select id="weight2" class="selectBox">
+                  <option value="5">AP/IB</option>
+                  <option value="4.5">Dual Credit</option>
+                  <option value="4.5">Advanced</option>
+                  <option value="4">On Level</option>
+                </select></td>
+                <td><input type="number" id="grade2" value="0" class="box" min="0" max="100"></td></select>
+              </td>
+              </tr>
+              <!-----------------------subject 3-------------------------------->
+              <tr>  
+                <td><input type="string" id="className" value="Class Name" class="box"></td></select>
+                <td><select id="weight3" class="selectBox">
+                  <option value="5">AP/IB</option>
+                  <option value="4.5">Dual Credit</option>
+                  <option value="4.5">Advanced</option>
+                  <option value="4">On Level</option>
+                </select></td>
+                <td><input type="number" id="grade3" value="0" class="box" min="0" max="100"></td></select>
+              </td>
+              </tr>
+              <!-----------------------subject 4-------------------------------->
+              <tr>  
+                <td><input type="string" id="className" value="Class Name" class="box"></td></select>
+                <td><select id="weight4" class="selectBox">
+                  <option value="5">AP/IB</option>
+                  <option value="4.5">Dual Credit</option>
+                  <option value="4.5">Advanced</option>
+                  <option value="4">On Level</option>
+                </select></td>
+                <td><input type="number" id="grade4" value="0" class="box" min="0" max="100"></td></select>
+              </td>
+              </tr>
+         <!-----------------------subject 5-------------------------------->
+              <tr>  
+                <td><input type="string" id="className" value="Class Name" class="box"></td></select>
+                <td><select id="weight5" class="selectBox">
+                  <option value="5">AP/IB</option>
+                  <option value="4.5">Dual Credit</option>
+                  <option value="4.5">Advanced</option>
+                  <option value="4">On Level</option>
+                </select></td>
+                <td><input type="number" id="grade5" value="0" class="box" min="0" max="100"></td></select>
+              </td>
+              </tr>
+              <!-----------------------subject 6-------------------------------->
+              <tr>  
+                <td><input type="string" id="className" value="Class Name" class="box"></td></select>
+                <td><select id="weight6" class="selectBox">
+                  <option value="5">AP/IB</option>
+                  <option value="4.5">Dual Credit</option>
+                  <option value="4.5">Advanced</option>
+                  <option value="4">On Level</option>
+                </select></td>
+                <td><input type="number" id="grade6" value="0" class="box" min="0" max="100"></td></select>
+              </td>
+              </tr>
+               <!-----------------------subject 7-------------------------------->
+               <tr>  
+                <td><input type="string" id="className" value="Class Name" class="box"></td></select>
+                <td><select id="weight7" class="selectBox">
+                  <option value="5">AP/IB</option>
+                  <option value="4.5">Dual Credit</option>
+                  <option value="4.5">Advanced</option>
+                  <option value="4">On Level</option>
+                </select></td>
+                <td><input type="number" id="grade7" value="0" class="box" min="0" max="100"></td></select>
+              </td>
+              </tr>
+          </table>
+          <button type="button" id="addRowBtn" onclick="addRow()">Add Row</button>
+          <button type="button" id="removeRowBtn" onclick="removeRow()">Remove Row</button>
+      </form>  
+      <script src="./app.js"></script>
+  </body>
+</html>
