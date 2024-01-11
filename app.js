@@ -43,33 +43,3 @@ function removeRow() {
         }, 500);
     }
 }
-
-function loadTableDataFromURL() {
-    const hashData = window.location.hash;
-    if (hashData) {
-        try {
-            const tableData = JSON.parse(decodeURIComponent(hashData.slice(1)));
-            tableData.forEach(rowData => addRowWithData(rowData));
-        } catch (e) {
-            console.error("Error parsing table data from URL:", e);
-        }
-    }
-}
-
-// Call this function when the page loads
-document.addEventListener('DOMContentLoaded', loadTableDataFromURL);
-
-function loadTableDataFromURL() {
-    const hashData = window.location.hash;
-    if (hashData) {
-        try {
-            const tableData = JSON.parse(decodeURIComponent(hashData.slice(1)));
-            tableData.forEach(rowData => addRowWithData(rowData));
-        } catch (e) {
-            console.error("Error parsing table data from URL:", e);
-        }
-    }
-}
-
-// Call this function when the page loads
-document.addEventListener('DOMContentLoaded', loadTableDataFromURL);
